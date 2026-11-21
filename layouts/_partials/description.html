@@ -1,0 +1,7 @@
+{{- $d := "" }}
+{{- with .Params.summary }}{{ $d = . }}
+{{- else }}
+  {{- if .IsPage }}{{ $d = partial "first-paragraph.html" . | plainify | htmlUnescape | strings.TrimSpace | truncate 180 }}{{ end }}
+  {{- if not $d }}{{ $d = site.Params.description }}{{ end }}
+{{- end }}
+{{- return $d }}

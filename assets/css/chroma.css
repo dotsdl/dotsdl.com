@@ -1,4 +1,5 @@
-/* Generated: hugo gen chromastyles --style=github / github-dark */
+/* Generated: hugo gen chromastyles --style=github / github-dark, each scoped to its color scheme */
+@media (prefers-color-scheme: light) {
 /* Generated using: hugo gen chromastyles --style=github */
 
 /* Background */ .bg { background-color:#f7f7f7; }
@@ -74,6 +75,7 @@
 /* GenericOutput */ .chroma .go { color:#1f2328 }
 /* GenericUnderline */ .chroma .gl { text-decoration:underline }
 /* TextWhitespace */ .chroma .w { color:#fff }
+}
 @media (prefers-color-scheme: dark) {
 /* Generated using: hugo gen chromastyles --style=github-dark */
 

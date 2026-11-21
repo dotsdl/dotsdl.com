@@ -104,3 +104,7 @@ th, td { border-bottom: 1px solid var(--border); padding: 0.4rem 0.5rem; text-al
 .todo { background: var(--todo-bg); color: var(--todo-fg); padding: 0.25rem 0.5rem; border-radius: 4px; }
 
 .site-footer { border-top: 1px solid var(--border); padding: 1.5rem 0 2.5rem; color: var(--muted); font-size: 0.85rem; }
+
+.syndication { color: var(--muted); font-size: 0.95rem; margin-top: 2rem; }
+
+math { font-family: "Latin Modern Math", "STIX Two Math", "Cambria Math", math; }

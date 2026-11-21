@@ -6,8 +6,8 @@ tags: [sample, math]
 series: []
 summary: "Sample essay exercising build-time math and highlighted code; delete before launch."
 math: true
-canonical: ""
-syndication: []
+canonical: "https://example.com/originally-published-here/"
+syndication: ["https://example.com/originally-published-here/", "https://example.org/a-cross-post/"]
 ---
 
 Sample essay for testing the theme; delete before launch.

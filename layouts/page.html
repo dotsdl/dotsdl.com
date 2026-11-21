@@ -16,6 +16,7 @@
   {{ .Content }}
   </div>
   {{- if $isPost }}
+  {{ partial "syndication.html" . }}
   {{ partial "subscribe.html" . }}
   {{- end }}
 </article>
