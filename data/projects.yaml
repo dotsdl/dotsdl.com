@@ -1,0 +1,20 @@
+# Each entry renders as a card on /projects/. Add a project by adding an entry; no template edits needed.
+# Fields: name, description (one line), role, links (list of {label, url}; related posts can use site paths like /notes/foo/).
+- name: alchemiscale
+  description: "[TODO: one-line description]"  # TODO(David)
+  role: "[TODO: role]"  # TODO(David)
+  links:
+    - label: Repo
+      url: https://github.com/OpenFreeEnergy/alchemiscale
+- name: gufe
+  description: "[TODO: one-line description]"  # TODO(David)
+  role: "[TODO: role]"  # TODO(David)
+  links:
+    - label: Repo
+      url: https://github.com/OpenFreeEnergy/gufe
+- name: alchemlyb
+  description: "[TODO: one-line description]"  # TODO(David)
+  role: "[TODO: role]"  # TODO(David)
+  links:
+    - label: Repo
+      url: https://github.com/alchemistry/alchemlyb

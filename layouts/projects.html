@@ -1,0 +1,18 @@
+{{ define "main" }}
+<h1>{{ .Title }}</h1>
+{{ .Content }}
+<ul class="cards">
+{{- range hugo.Data.projects }}
+  <li class="card">
+    <h2>{{ .name }}</h2>
+    <p>{{ .description }}</p>
+    {{ with .role }}<p class="meta">Role: {{ . }}</p>{{ end }}
+    {{- with .links }}
+    <ul class="card-links">
+      {{- range . }}<li><a href="{{ .url }}">{{ .label }}</a></li>{{ end }}
+    </ul>
+    {{- end }}
+  </li>
+{{- end }}
+</ul>
+{{ end }}

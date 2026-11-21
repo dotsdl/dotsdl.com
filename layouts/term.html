@@ -1,0 +1,5 @@
+{{ define "main" }}
+<h1>{{ with .Parent }}{{ .Title }}: {{ end }}{{ .Title }}</h1>
+<ul class="post-list">{{ range .Pages }}{{ partial "post-item.html" . }}{{ end }}</ul>
+<p><a href="{{ .RelPermalink }}index.xml">RSS for this {{ .Data.Singular }}</a></p>
+{{ end }}

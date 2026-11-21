@@ -1,0 +1,106 @@
+:root {
+  --bg: #fdfdfc;
+  --fg: #1d1d1f;
+  --muted: #5f6368;
+  --border: #e3e3e0;
+  --accent: #0b57d0;
+  --code-bg: #f4f4f2;
+  --todo-bg: #fff4c2;
+  --todo-fg: #5c4500;
+  --measure: 68ch;
+  color-scheme: light dark;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #141416;
+    --fg: #e6e6e3;
+    --muted: #a0a3a8;
+    --border: #2e2f33;
+    --accent: #8ab4f8;
+    --code-bg: #1e1f22;
+    --todo-bg: #3d3300;
+    --todo-fg: #ffe58a;
+  }
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0 auto;
+  padding: 0 1rem;
+  max-width: calc(var(--measure) + 2rem);
+  background: var(--bg);
+  color: var(--fg);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 1.0625rem;
+  line-height: 1.65;
+}
+
+a { color: var(--accent); text-underline-offset: 0.15em; }
+a:hover { text-decoration-thickness: 2px; }
+
+.skip-link { position: absolute; left: -999px; }
+.skip-link:focus { left: 1rem; top: 1rem; background: var(--bg); padding: 0.5rem; }
+
+.site-header {
+  display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between;
+  gap: 0.5rem 1.5rem; padding: 1.5rem 0; border-bottom: 1px solid var(--border);
+}
+.site-title { font-weight: 700; font-size: 1.2rem; color: var(--fg); text-decoration: none; }
+.site-header ul { display: flex; flex-wrap: wrap; gap: 0.25rem 1rem; list-style: none; margin: 0; padding: 0; }
+.site-header a[aria-current="page"] { font-weight: 600; text-decoration-thickness: 2px; }
+
+main { padding: 1.5rem 0 3rem; }
+
+h1, h2, h3 { line-height: 1.25; margin: 2rem 0 0.75rem; }
+h1 { font-size: 2rem; margin-top: 1rem; }
+h2 { font-size: 1.35rem; }
+h2 a { color: inherit; text-decoration: none; }
+
+.meta, time { color: var(--muted); font-size: 0.9rem; }
+.post header .meta, .page header .meta { margin-top: -0.25rem; }
+
+img, svg, video { max-width: 100%; height: auto; }
+figure { margin: 1.5rem 0; }
+
+blockquote { margin: 1.5rem 0; padding-left: 1rem; border-left: 3px solid var(--border); color: var(--muted); }
+
+code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 0.9em; }
+:not(pre) > code { background: var(--code-bg); padding: 0.1em 0.3em; border-radius: 3px; }
+pre { overflow-x: auto; padding: 1rem; border-radius: 6px; line-height: 1.45; background: var(--code-bg); }
+.highlight pre { margin: 1.5rem 0; }
+
+math[display="block"] { margin: 1.25rem 0; overflow-x: auto; overflow-y: hidden; }
+
+table { border-collapse: collapse; width: 100%; margin: 1.5rem 0; font-size: 0.95rem; }
+th, td { border-bottom: 1px solid var(--border); padding: 0.4rem 0.5rem; text-align: left; }
+
+.post-list, .term-list { list-style: none; padding: 0; }
+.post-item { margin: 0 0 1.5rem; }
+.post-item-head { display: flex; flex-wrap: wrap; gap: 0 0.75rem; align-items: baseline; }
+.post-item-head a { font-weight: 600; }
+.post-item p { margin: 0.25rem 0 0; }
+
+.cards { list-style: none; padding: 0; display: grid; gap: 1rem; }
+.card { border: 1px solid var(--border); border-radius: 8px; padding: 1rem 1.25rem; }
+.card h2 { margin-top: 0; }
+.card-links { display: flex; flex-wrap: wrap; gap: 0.25rem 1rem; list-style: none; padding: 0; }
+
+.subscribe { margin-top: 3rem; padding: 1.25rem; border: 1px solid var(--border); border-radius: 8px; }
+.subscribe h2 { margin-top: 0; }
+.subscribe-row { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.4rem; }
+.subscribe input[type="email"] {
+  flex: 1 1 14rem; padding: 0.5rem 0.65rem; font: inherit; color: var(--fg);
+  background: var(--bg); border: 1px solid var(--border); border-radius: 6px;
+}
+.subscribe button {
+  padding: 0.5rem 1rem; font: inherit; font-weight: 600; color: var(--bg);
+  background: var(--fg); border: 0; border-radius: 6px; cursor: pointer;
+}
+.subscribe-feeds { font-size: 0.9rem; color: var(--muted); margin-bottom: 0; }
+
+.todo { background: var(--todo-bg); color: var(--todo-fg); padding: 0.25rem 0.5rem; border-radius: 4px; }
+
+.site-footer { border-top: 1px solid var(--border); padding: 1.5rem 0 2.5rem; color: var(--muted); font-size: 0.85rem; }

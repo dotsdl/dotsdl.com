@@ -1,0 +1,11 @@
+<li class="post-item">
+  <div class="post-item-head">
+    <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
+    <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+  </div>
+  {{- if eq .Section "essays" }}
+  {{ with .Params.summary }}<p>{{ . }}</p>{{ end }}
+  {{- else }}
+  {{ partial "first-paragraph.html" . }}
+  {{- end }}
+</li>

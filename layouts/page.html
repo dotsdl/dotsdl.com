@@ -1,0 +1,22 @@
+{{ define "main" }}
+{{- $isPost := in (slice "notes" "essays") .Section }}
+{{- if and (eq .Section "essays") (not .Draft) (not .Params.summary) }}
+  {{- errorf "%s: essays require a summary in front matter" .File.Path }}
+{{- end }}
+<article class="{{ if $isPost }}post{{ else }}page{{ end }}">
+  <header>
+    <h1>{{ .Title }}</h1>
+    {{- if $isPost }}
+    {{ partial "post-meta.html" . }}
+    {{- else if .Params.lastmod }}
+    <p class="meta">Last updated <time datetime="{{ .Lastmod.Format "2006-01-02" }}">{{ .Lastmod.Format "January 2, 2006" }}</time></p>
+    {{- end }}
+  </header>
+  <div class="content">
+  {{ .Content }}
+  </div>
+  {{- if $isPost }}
+  {{ partial "subscribe.html" . }}
+  {{- end }}
+</article>
+{{ end }}

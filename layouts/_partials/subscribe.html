@@ -1,0 +1,16 @@
+<aside class="subscribe" aria-label="Subscribe">
+  <h2>Subscribe</h2>
+  {{- with site.Params.buttondown }}
+  <form class="subscribe-form" action="https://buttondown.com/api/emails/embed-subscribe/{{ . }}" method="post">
+    <label for="subscribe-email">Get new posts by email</label>
+    <div class="subscribe-row">
+      <input type="email" name="email" id="subscribe-email" autocomplete="email" placeholder="you@example.com" required>
+      <input type="hidden" name="embed" value="1">
+      <button type="submit">Subscribe</button>
+    </div>
+  </form>
+  {{- else }}
+  <p class="todo">[TODO: set params.buttondown in hugo.toml to show the email form]</p>
+  {{- end }}
+  <p class="subscribe-feeds">Or follow by RSS: <a href="{{ "index.xml" | relURL }}">everything</a> · <a href="{{ "notes/index.xml" | relURL }}">notes</a> · <a href="{{ "essays/index.xml" | relURL }}">essays</a></p>
+</aside>
