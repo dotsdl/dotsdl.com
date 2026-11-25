@@ -1,0 +1,7 @@
+<p class="meta">
+  <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
+  {{- with .GetTerms "tags" }} ·
+    {{- range $i, $t := . }}{{ if $i }},{{ end }} <a href="{{ $t.RelPermalink }}">#{{ $t.LinkTitle }}</a>{{ end }}
+  {{- end }}
+  {{- with .GetTerms "series" }} · Series: {{ range $i, $t := . }}{{ if $i }}, {{ end }}<a href="{{ $t.RelPermalink }}">{{ $t.LinkTitle }}</a>{{ end }}{{ end }}
+</p>

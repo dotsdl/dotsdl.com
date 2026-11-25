@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 160" width="600" height="160" role="img" aria-label="Three boxes joined by arrows">
+  <rect width="600" height="160" fill="#f4f4f2"/>
+  <g font-family="system-ui, sans-serif" font-size="18" text-anchor="middle" fill="#1d1d1f">
+    <rect x="30" y="50" width="140" height="60" rx="8" fill="#fff" stroke="#5f6368"/><text x="100" y="86">write</text>
+    <rect x="230" y="50" width="140" height="60" rx="8" fill="#fff" stroke="#5f6368"/><text x="300" y="86">push</text>
+    <rect x="430" y="50" width="140" height="60" rx="8" fill="#fff" stroke="#5f6368"/><text x="500" y="86">email</text>
+  </g>
+  <g stroke="#5f6368" stroke-width="2" fill="none"><path d="M170 80h55m-10-6 10 6-10 6"/><path d="M370 80h55m-10-6 10 6-10 6"/></g>
+</svg>

@@ -1,0 +1,63 @@
+baseURL = "https://dotsdl.com/"
+locale = "en-US"
+title = "dotsdl"
+enableRobotsTXT = true
+
+[params]
+  author = "David L. Dotson"
+  description = "Build logs and essays by David L. Dotson."
+  github = "dotsdl"
+  # Buttondown newsletter username; the subscribe form appears once this is set.
+  buttondown = ""  # TODO(David): set Buttondown username
+  # GoatCounter site code (the "code" in code.goatcounter.com); empty disables analytics.
+  goatcounter = ""  # TODO(David): set GoatCounter site code
+
+[services.rss]
+  limit = 20
+
+[taxonomies]
+  tag = "tags"
+  series = "series"
+
+[permalinks.page]
+  notes = "/notes/:slugorcontentbasename/"
+  essays = "/essays/:slugorcontentbasename/"
+
+[markup.goldmark.renderer]
+  # Allows the TODO(David) HTML comments and raw HTML in our own posts.
+  unsafe = true
+
+[markup.goldmark.extensions.passthrough]
+  enable = true
+  [markup.goldmark.extensions.passthrough.delimiters]
+    block = [['\[', '\]'], ['$$', '$$']]
+    inline = [['\(', '\)']]
+
+[markup.highlight]
+  noClasses = false
+
+[menus]
+  [[menus.main]]
+    name = "Notes"
+    pageRef = "/notes"
+    weight = 10
+  [[menus.main]]
+    name = "Essays"
+    pageRef = "/essays"
+    weight = 20
+  [[menus.main]]
+    name = "Projects"
+    pageRef = "/projects"
+    weight = 30
+  [[menus.main]]
+    name = "Now"
+    pageRef = "/now"
+    weight = 40
+  [[menus.main]]
+    name = "About"
+    pageRef = "/about"
+    weight = 50
+  [[menus.main]]
+    name = "RSS"
+    url = "/index.xml"
+    weight = 60
