@@ -1,0 +1,19 @@
+{{- /* Absolute link URLs so links survive in feeds and email. */ -}}
+{{- $d := .Destination }}
+{{- $u := urls.Parse $d }}
+{{- $href := $d }}
+{{- if not $u.IsAbs }}
+  {{- if hasPrefix $d "#" }}
+    {{- $href = printf "%s%s" .PageInner.Permalink $d }}
+  {{- else if hasPrefix $d "/" }}
+    {{- $href = absURL $d }}
+  {{- else }}
+    {{- with .PageInner.Resources.Get $u.Path }}
+      {{- $href = .Permalink }}
+    {{- else }}
+      {{- $href = urls.JoinPath $.PageInner.Permalink $d }}
+    {{- end }}
+  {{- end }}
+{{- end -}}
+<a href="{{ $href }}"{{ with .Title }} title="{{ . }}"{{ end }}{{ if $u.IsAbs }}{{ if not (hasPrefix $d site.BaseURL) }} rel="noopener"{{ end }}{{ end }}>{{ .Text }}</a>
+{{- /**/ -}}

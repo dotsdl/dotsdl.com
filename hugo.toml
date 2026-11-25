@@ -12,6 +12,12 @@ enableRobotsTXT = true
   # GoatCounter site code (the "code" in code.goatcounter.com); empty disables analytics.
   goatcounter = ""  # TODO(David): set GoatCounter site code
 
+[outputs]
+  home = ["html", "rss"]
+  section = ["html", "rss"]
+  taxonomy = ["html"]
+  term = ["html", "rss"]
+
 [services.rss]
   limit = 20
 

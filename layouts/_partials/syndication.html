@@ -1,0 +1,5 @@
+{{- with .Params.syndication }}
+<p class="syndication">Also on
+  {{- range $i, $u := . }}{{ if $i }},{{ end }} <a href="{{ $u }}">{{ (urls.Parse $u).Host }}</a>{{ end }}.
+</p>
+{{- end }}

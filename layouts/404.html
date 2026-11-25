@@ -1,0 +1,9 @@
+{{ define "main" }}
+<h1>Page not found</h1>
+<p>Nothing lives at this address. It may have moved, or the link may be wrong.</p>
+<ul>
+  <li><a href="{{ "/" | relURL }}">Home</a></li>
+  <li><a href="{{ "notes/" | relURL }}">Notes</a> and <a href="{{ "essays/" | relURL }}">essays</a></li>
+  <li><a href="{{ "tags/" | relURL }}">All tags</a></li>
+</ul>
+{{ end }}
