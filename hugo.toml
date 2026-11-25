@@ -30,7 +30,7 @@ enableRobotsTXT = true
   essays = "/essays/:slugorcontentbasename/"
 
 [markup.goldmark.renderer]
-  # Allows the TODO(David) HTML comments and raw HTML in our own posts.
+  # Allows the placeholder HTML comments and raw HTML in our own posts.
   unsafe = true
 
 [markup.goldmark.extensions.passthrough]
