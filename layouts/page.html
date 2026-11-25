@@ -3,7 +3,7 @@
 {{- if and (eq .Section "essays") (not .Draft) (not .Params.summary) }}
   {{- errorf "%s: essays require a summary in front matter" .File.Path }}
 {{- end }}
-<article class="{{ if $isPost }}post{{ else }}page{{ end }}">
+<article class="{{ if $isPost }}post post-{{ .Section }}{{ else }}page{{ end }}">
   <header>
     <h1>{{ .Title }}</h1>
     {{- if $isPost }}
