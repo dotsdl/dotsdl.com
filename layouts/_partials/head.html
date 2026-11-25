@@ -32,7 +32,7 @@
 <meta name="twitter:image" content="{{ $img }}">
 {{- $css := slice (resources.Get "css/main.css") (resources.Get "css/chroma.css") | resources.Concat "css/site.css" | minify | fingerprint }}
 <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">
-{{- if and .IsPage (eq .Section "essays") }}
+{{- if and .IsPage (ne .Layout "projects") }}
 <link rel="preload" href="{{ "fonts/source-serif-4-wght-normal.woff2" | relURL }}" as="font" type="font/woff2" crossorigin>
 {{- end }}
 <script>
